@@ -1,11 +1,20 @@
+# To Start
 
-To change scss:
-<br>
-npm install in root
-<br>
-compile scss, with
-<br>
-npm run build
-<br>
-or npm run watch.
-<br>
+```sh
+npm install
+npm run dev & npm run watch
+```
+
+## Or if you have problems, try
+
+```
+npm install
+npm run dev
+```
+
+- Then open a *second* terminal window
+
+```
+npm run watch
+```
+
