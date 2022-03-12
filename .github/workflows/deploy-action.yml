@@ -17,7 +17,7 @@ jobs:
         run: npm run build
       - name: Run git-ftp script
         shell: bash
-        run: ./.github/workflows/deploy-script.sh
+        run: chmod +x ./.github/workflows/deploy-script.sh && bash ./.github/workflows/deploy-script.sh
         env:
           DEPLOY_USERNAME: ${{ secrets.username }}
           DEPLOY_SERVER: ${{ secrets.server }}
