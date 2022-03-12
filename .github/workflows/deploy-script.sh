@@ -10,11 +10,9 @@ apt-get -qq install git-ftp
 
 # git ftp push --user $FTP_production_username --passwd $FTP_production_password $FTP_production_url
 
-echo $username;
-echo $server;
-echo $port;
-echo $ssh_private_key;
-echo $local_path;
-echo $remote_path;
-echo $sftp_only;
-echo $args;
+echo $DEPLOY_USERNAME;
+echo $DEPLOY_SERVER;
+echo $DEPLOY_PORT;
+echo $DEPLOY_SSH_PRIVATE_KEY;
+echo $DEPLOY_LOCAL_PATH;
+echo $DEPLOY_REMOTE_PATH;

@@ -18,12 +18,10 @@ jobs:
       - name: Run git-ftp script
         shell: bash
         run: ./.github/workflows/deploy-script.sh
-        with:
-          username: ${{ secrets.username }}
-          server: ${{ secrets.server }}
-          port: ${{ secrets.port }}
-          ssh_private_key: ${{ secrets.ssh_private_key }}
-          local_path: ${{ secrets.local_path }}
-          remote_path: ${{ secrets.remote_path }}
-          sftp_only: ${{ secrets.sftp_only }}
-          args: ${{ secrets.args }}
+        env:
+          DEPLOY_USERNAME: ${{ secrets.username }}
+          DEPLOY_SERVER: ${{ secrets.server }}
+          DEPLOY_PORT: ${{ secrets.port }}
+          DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.ssh_private_key }}
+          DEPLOY_LOCAL_PATH: ${{ secrets.local_path }}
+          DEPLOY_REMOTE_PATH: ${{ secrets.remote_path }}
