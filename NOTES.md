@@ -24,3 +24,29 @@
 #           local_path: './static/*'
 #           remote_path: '/var/www/app'
 #           args: '-o ConnectTimeout=5'
+
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     name: deploy
+#     steps:
+#       - name: CheckoutAction
+#         uses: actions/checkout@v2
+#       - name: DeployAction
+#         uses: /.github/actions/deploy/action.yml
+#         with:
+#           username: ${{ secrets.username }}
+#           server: ${{ secrets.server }}
+#           port: ${{ secrets.port }}
+#           ssh_private_key: ${{ secrets.ssh_private_key }}
+#           local_path: ${{ secrets.local_path }}
+#           remote_path: ${{ secrets.remote_path }}
+#           sftp_only: ${{ secrets.sftp_only }}
+#           args: ${{ secrets.args }}
