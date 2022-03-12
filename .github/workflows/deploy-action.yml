@@ -5,21 +5,24 @@ jobs:
     runs-on: ubuntu-20.04
     name: deploy
     steps:
-      - name: Clone repository
+      - name: clone repo
         uses: actions/checkout@v2
-      - name: Use Node.js 16.x
+      - name: setup Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: Install dependencies
+      - name: install npm dependencies
         run: npm install
-      - name: Cache Gradle packages
+      - name: cache npm packages
         uses: actions/cache@v2
         with:
-          path: ./node_modules
-      - name: Generate build
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: generate build files
         run: npm run build
-      - name: Run git-ftp script
+      - name: run git-ftp upload script
         shell: bash
         run: /bin/chmod +x ./.github/workflows/deploy-script.sh && sudo /bin/bash ./.github/workflows/deploy-script.sh
         env:
