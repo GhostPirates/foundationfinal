@@ -1,0 +1,51 @@
+
+on:
+  push:
+    branches: [ $default-branch ]
+  # pull_request:
+  #   branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: DeployAction
+      - uses: workflow-templates/deploy/action.yml
+        with:
+          username: ${{ secrets.username }}
+          server: ${{ secrets.server }}
+          port: ${{ secrets.port }}
+          ssh_private_key: ${{ secrets.ssh_private_key }}
+          local_path: ${{ secrets.local_path }}
+          remote_path: ${{ secrets.remote_path }}
+          sftp_only: ${{ secrets.sftp_only }}
+          args: ${{ secrets.args }}
+
+
+# on: [push]
+
+# jobs:
+#   call-workflow:
+#     uses: octo-org/example-repo/.github/workflows/called-workflow.yml@main
+#     secrets:
+#       access-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+# jobs:
+#   deploy_job:
+#     runs-on: ubuntu-latest
+#     name: deploy
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: DeployAction
+#         uses: ../action.yml
+#         with:
+#           username: 'root'
+#           server: 'your server ip'
+#           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+#           local_path: './static/*'
+#           remote_path: '/var/www/app'
+#           args: '-o ConnectTimeout=5'
