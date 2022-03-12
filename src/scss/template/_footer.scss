@@ -1,0 +1,14 @@
+footer {
+    padding-top: 15px;
+    background-color: $colorFour;
+    li {
+        color: $colorTwo;
+    }
+    a {
+        @extend li;
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+}

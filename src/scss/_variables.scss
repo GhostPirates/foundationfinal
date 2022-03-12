@@ -1,0 +1,20 @@
+// breakpoints
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+
+// colors 
+$colorOne: rgb(132, 220, 198);
+$colorTwo: rgb(214, 237, 255);
+$colorThree: rgb(172, 215, 236);
+$colorFour: rgb(95, 95, 155);
+$colorFive: rgb(50, 98, 87);
+$colorSix: rgb(138, 138, 138);
+$white: rgb(255, 250, 250);
+$black: rgb(10, 10, 10);
+$grey: rgb(202, 202, 202);
+$transparent: transparent;

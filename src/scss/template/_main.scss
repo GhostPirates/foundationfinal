@@ -1,0 +1,28 @@
+body {
+    max-width: 1920px;
+    @include setbox(null, null, null, auto);
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url('/images/body/body-texture.jpg');
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -999;
+        background-blend-mode: screen;
+        opacity: 0.25;
+        background-color: rgba($colorFour, 0.125);
+    }
+}
+
+main {
+    min-height: 71.8vh;
+    @include medium_and_up() {
+        min-height: 60.2vh;
+        > * {
+            margin-bottom: 50px;
+        }
+    }
+}

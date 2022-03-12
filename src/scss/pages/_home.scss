@@ -1,0 +1,70 @@
+.orbit {
+    max-width: 1200px;
+    @include setbox(null, null, null, auto auto 1rem auto);
+    h2 {
+        @include setbox(null, null, 0.5%, null);
+        position: absolute;
+        z-index: 999;
+        right: 20px;
+        background-color: darkShift(rgba($white, 0.3));
+        border-radius: 10px;
+        color: $white;
+        font-style: oblique;
+        text-shadow: 0 0 2.5px darkShift($black);
+    }
+    .orbit-container img {
+        max-height: 700px;
+    }
+    @include medium_and_up() {
+        @include setbox(null, null, null, auto auto 50px auto);
+    }
+}
+
+.media-object {
+    @include medium_and_up() {   
+        @include setbox(null, null, null, auto auto 50px auto);
+    }
+    .media-object-section:nth-child(2) img {
+        @include setbox(96%, null, null, null);
+        border-radius: 10px;
+        @include medium_and_up() {
+            @include setbox(100%, null, null, null);
+        }
+    }
+    .media-object-section {
+        @include setbox(null, null, 0, null);
+        @include medium_and_up() {    
+            &:nth-child(1) {
+                @include setbox(null, null, 2%, 2%);
+            }
+            &:nth-child(2) {
+                @include setbox(null, null, 3%, null);
+            }
+    }
+    }
+}
+
+.card {
+    background-color: $transparent;
+    border: none;
+    @include medium_and_up {
+        box-shadow:  0 -1px rgba($black , 0.1);
+        @include setbox(null, null, 1rem 0 0 0, null);
+    }
+    .card-divider {
+        background-color: $transparent;
+        font-size: larger;
+        color: $colorFive;
+        @include zerobox();
+    }
+    .card-section {
+        @include zerobox();
+    }
+    img {
+        @include setbox(null, null, null, 2% 2% 1rem 2%);
+        border-radius: 10px;
+         @include medium_and_up() {
+            border-radius: unset;
+        }
+    }
+}

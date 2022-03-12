@@ -1,0 +1,31 @@
+// import variables
+@import "./_variables.scss";
+
+// import "breakpoint-sass" helper mixin
+@import "../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+
+// import "foundation-sites" scss
+// @import "../../node_modules/foundation-sites/scss/foundation.scss";
+
+// import "foundation-sites" css
+@import "../../node_modules/foundation-sites/dist/css/foundation.css";
+
+// import partials
+@import "./partials/_mixins.scss";
+@import "./partials/_functions.scss";
+@import "./partials/_breakpoints.scss";
+
+// import main template styles
+@import "./template/_main.scss";
+
+// import header styles
+@import "./template/_header.scss";
+
+// import footer styles
+@import "./template/_footer.scss";
+
+// import pages
+@import "./pages/_contact.scss";
+@import "./pages/_gallery.scss";
+@import "./pages/_video.scss";
+@import "./pages/_home.scss";

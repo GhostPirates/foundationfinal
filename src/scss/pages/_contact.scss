@@ -1,0 +1,31 @@
+.badge {
+    @include setbox(null, null, null, 0 0 10px 0);
+}
+
+form {
+    .button {
+        background-color: $colorOne;
+        color: darkShift($colorFive);
+        &:hover,
+        &:focus {
+            background-color: darkShift($colorOne);
+            color: $black;
+        }
+    }
+    textarea {
+        resize: none;
+    }
+}
+
+blockquote {
+    color: darkShift($colorSix);
+    cite {
+        @extend blockquote;
+    }
+}
+
+@include medium_and_up() {
+    .callout {
+        @include setbox(null, null, null, 0 0 50px 0);
+    }
+}
