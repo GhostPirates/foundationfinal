@@ -4,15 +4,34 @@ on:
   pull_request:
     branches: [ $default-branch ]
 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     name: deploy
+#     steps:
+#       - name: CheckoutAction
+#         uses: actions/checkout@v2
+#       - name: DeployAction
+#         uses: /.github/actions/deploy/action.yml
+#         with:
+#           username: ${{ secrets.username }}
+#           server: ${{ secrets.server }}
+#           port: ${{ secrets.port }}
+#           ssh_private_key: ${{ secrets.ssh_private_key }}
+#           local_path: ${{ secrets.local_path }}
+#           remote_path: ${{ secrets.remote_path }}
+#           sftp_only: ${{ secrets.sftp_only }}
+#           args: ${{ secrets.args }}
+
 jobs:
-  build:
+  deploy_job:
     runs-on: ubuntu-latest
     name: deploy
     steps:
-      - name: CheckoutAction
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: DeployAction
-        uses: /.github/actions/deploy/action.yml
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.2
         with:
           username: ${{ secrets.username }}
           server: ${{ secrets.server }}
