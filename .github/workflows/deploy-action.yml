@@ -13,11 +13,15 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: npm install
+      - name: Cache Gradle packages
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
       - name: Generate build
         run: npm run build
       - name: Run git-ftp script
         shell: bash
-        run: chmod +x ./.github/workflows/deploy-script.sh && bash ./.github/workflows/deploy-script.sh
+        run: /bin/chmod +x ./.github/workflows/deploy-script.sh && sudo /bin/bash ./.github/workflows/deploy-script.sh
         env:
           DEPLOY_USERNAME: ${{ secrets.username }}
           DEPLOY_SERVER: ${{ secrets.server }}
