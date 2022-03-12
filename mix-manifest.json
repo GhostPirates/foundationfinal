@@ -1,7 +1,7 @@
 {
-    "/public/assets/js/app.js": "/public/assets/js/app.js",
-    "/public/assets/js/vendor.js": "/public/assets/js/vendor.js",
-    "/public/assets/css/style.css": "/public/assets/css/style.css",
+    "/dist/js/app.js": "/dist/js/app.js",
+    "/dist/js/vendor.js": "/dist/js/vendor.js",
+    "/dist/css/style.css": "/dist/css/style.css",
     "/public/icons/.DS_Store": "/public/icons/.DS_Store",
     "/public/icons/foundation-icons.css": "/public/icons/foundation-icons.css",
     "/public/icons/foundation-icons.eot": "/public/icons/foundation-icons.eot",

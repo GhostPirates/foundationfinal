@@ -1,6 +1,3 @@
-
-console.log(`There are × ${$('div').length} divs on the page!`);
-
 $('#form').submit(function (e) {
     e.preventDefault();
     const form = $(this);
