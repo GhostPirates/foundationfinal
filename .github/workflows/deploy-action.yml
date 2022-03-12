@@ -2,13 +2,22 @@ on: [push]
 
 jobs:
   deploy_job:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     name: deploy
     steps:
-      - name: Checkout
+      - name: Clone repository
         uses: actions/checkout@v2
-      - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm install
+      - name: Generate build
+        run: npm run build
+      - name: Run git-ftp script
+        shell: bash
+        run: ./.github/workflows/deploy-script.sh
         with:
           username: ${{ secrets.username }}
           server: ${{ secrets.server }}
