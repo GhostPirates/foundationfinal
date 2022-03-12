@@ -12,7 +12,7 @@ jobs:
       - name: CheckoutAction
         uses: actions/checkout@v2
       - name: DeployAction
-        uses: ./.github/actions/deploy/action.yml
+        uses: /.github/actions/deploy/action.yml
         with:
           username: ${{ secrets.username }}
           server: ${{ secrets.server }}
