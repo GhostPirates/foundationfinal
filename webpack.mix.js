@@ -17,12 +17,17 @@ pe.skip(function (traceLine, lineNumber) {
 
 console.log(`✔ OK, NODE_ENV is {${process.env.NODE_ENV}: ${isDevelopment}}`);
 
+// Clean css/js folder
+// rimraf("public/{css,js}/*.{css,js}", fs, () => {
+// 	console.log("✔ OK - Cleaned out the public folder! ✌(◕‿-)✌ ");
+// });
+
 mix
-  .js("./src/js/app.js", "./dist/js")
+  .js("./src/js/app.js", "./public/js")
   .sourceMaps(true)
-  .js("./src/js/vendor.js", "./dist/js")
+  .js("./src/js/vendor.js", "./public/js")
   .sourceMaps(true)
-  .sass("./src/scss/style.scss", "./dist/css", {
+  .sass("./src/scss/style.scss", "./public/css/style.css", {
     sassOptions: {
       sourceMap: isDevelopment
     }
@@ -61,27 +66,23 @@ mix
       },
       devtool: 'eval',
       devServer: {
-        // proxy: {
-        //   '/websocket': {
-        //     target: 'ws://localhost:8080',
-        //     ws: true
-        //   },
-        // },
+        proxy: {
+          '/websocket': {
+            target: 'ws://localhost:8080',
+            ws: true
+          },
+        },
         static: [
           {
             directory: path.join(__dirname, 'public'),
             publicPath: '/',
-          },
-          {
-            directory: path.join(__dirname, 'dist'),
-            publicPath: '/assets',
           }
         ],
         host: "localhost",
         open: true,
         compress: true,
         port: 3001,
-        hot: true,
+        hot: false,
         allowedHosts: [
           'all'
         ],
@@ -90,6 +91,6 @@ mix
         }
       }
     }
-  })
-  .browserSync('localhost:3001')
+  });
+  // .browserSync('localhost:3001')
 
