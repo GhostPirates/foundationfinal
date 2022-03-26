@@ -17,11 +17,6 @@ pe.skip(function (traceLine, lineNumber) {
 
 console.log(`✔ OK, NODE_ENV is {${process.env.NODE_ENV}: ${isDevelopment}}`);
 
-// Clean css/js folder
-// rimraf("public/{css,js}/*.{css,js}", fs, () => {
-// 	console.log("✔ OK - Cleaned out the public folder! ✌(◕‿-)✌ ");
-// });
-
 mix
   .js("./src/js/app.js", "./public/js")
   .sourceMaps(true)
@@ -92,5 +87,3 @@ mix
       }
     }
   });
-  // .browserSync('localhost:3001')
-
