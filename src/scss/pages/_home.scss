@@ -1,5 +1,3 @@
-@import "variables";
-
 .orbit {
     max-width: 1200px;
     @include setbox(null, null, null, auto auto 1rem auto);
