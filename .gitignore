@@ -138,6 +138,4 @@ composer.phar
 
 # foundationfinal project ignores
 /public/
-/dist/
-/assets/
-/css/
+/hot
