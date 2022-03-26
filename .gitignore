@@ -139,3 +139,4 @@ composer.phar
 # foundationfinal project ignores
 /public/
 /hot
+/mix-manifest.json
