@@ -1,6 +1,11 @@
-//import foundation css
-@import "foundation.min.css";
-@import "icons/foundation-icons.css";
+// breakpoints
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
 
 // colors 
 $colorOne: rgb(132, 220, 198);
@@ -13,13 +18,3 @@ $white: rgb(255, 250, 250);
 $black: rgb(10, 10, 10);
 $grey: rgb(202, 202, 202);
 $transparent: transparent;
-
-//import partials
-@import "./partials/mixins";
-@import "./partials/functions";
-@import "./partials/breakpoints";
-
-//import tmeplate style
-@import "./template/styles";
-
-
