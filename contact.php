@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Georges Garden Shop - Contact</title>
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -116,11 +116,7 @@
 
     </footer>
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/form.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
