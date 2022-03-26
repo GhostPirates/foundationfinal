@@ -1,0 +1,17 @@
+h3,
+h4,
+h5 {
+    color: $colorFive;
+}
+
+h2 {
+    @include setbox(null, null, null, 1rem auto);
+    color: $colorFive;
+    @include medium_and_up() {
+        @include setbox(null, null, null, 50px auto);
+    }
+}
+
+.subheader {
+  color: darkShift($colorSix);
+}
